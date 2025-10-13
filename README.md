@@ -4,7 +4,8 @@ This repository contains the frontend of my personal portfolio website, will be 
 It aims to showcase my projects, skills, and professional journey — while integrating live **observability metrics** powered by **OpenTelemetry**.
 
 ## Technologies
-- Vue.js 3  
+- Vue.js 3
+- Three.js
 - HTML / CSS / JavaScript  
 - Vite  
 - OpenTelemetry (frontend tracing)

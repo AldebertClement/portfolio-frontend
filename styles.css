@@ -4,10 +4,6 @@
     --title-day: #6B4E2E;
     --accent-day: #A97447;
     --hover-day: #C28E5A;
-    --highlight-day: #D8C6B4;
-    --link-hover-day: #C28E5A;
-    --highlight-night: #3A322A;
-    --link-hover-night: #D4AF7A;
 
     --bg-night: #1B1A17;
     --text-night: #E8DCC2;
@@ -63,6 +59,14 @@ body.night h1, body.night h2, body.night h3 {
     color: var(--hover-day);
 }
 
+a {
+    color: var(--accent-day);
+}
+
+a:hover {
+    color: var(--hover-day);
+}
+
 body.night .ButtonHeader {
     color: var(--accent-night);
 }
@@ -80,3 +84,85 @@ section {
     height: 100vh;
     scroll-snap-align: start;
 }
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+    section {
+        max-width: 95%;
+        margin: 0 auto;
+        padding: 20px 10px;
+    }
+    body {
+        font-size: 14px;
+    }
+    h1 { font-size: 22px; }
+    h2 { font-size: 18px; }
+    h3 { font-size: 16px; }
+}
+
+/* Mobile paysage */
+@media (min-width: 481px) and (max-width: 767px) {
+    section {
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 25px 15px;
+    }
+    body { font-size: 15px; }
+    h1 { font-size: 24px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 17px; }
+}
+
+/* Tablette portrait */
+@media (min-width: 768px) and (max-width: 1024px) {
+    section {
+        max-width: 85%;
+        margin: 0 auto;
+        padding: 30px 20px;
+    }
+    body { font-size: 16px; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 22px; }
+    h3 { font-size: 18px; }
+}
+
+/* Tablette paysage / petits laptops */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    section {
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 35px 25px;
+    }
+    body { font-size: 16px; }
+    h1 { font-size: 30px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 20px; }
+}
+
+/* Standard PC */
+@media (min-width: 1201px) and (max-width: 1440px) {
+    section {
+        max-width: 75%;
+        margin: 0 auto;
+        padding: 40px 30px;
+    }
+    body { font-size: 16px; }
+    h1 { font-size: 32px; }
+    h2 { font-size: 26px; }
+    h3 { font-size: 22px; }
+}
+
+/* Grand écran */
+@media (min-width: 1441px) {
+    section {
+        max-width: 70%;
+        margin: 0 auto;
+        padding: 50px 40px;
+    }
+    body { font-size: 16px; }
+    h1 { font-size: 34px; }
+    h2 { font-size: 28px; }
+    h3 { font-size: 24px; }
+}
+
+

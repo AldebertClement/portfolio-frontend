@@ -4,12 +4,13 @@
     --title-day: #6B4E2E;
     --accent-day: #A97447;
     --hover-day: #C28E5A;
-
     --bg-night: #1B1A17;
     --text-night: #E8DCC2;
     --title-night: #C7A36B;
     --accent-night: #A87C4F;
     --hover-night: #D4AF7A;
+    --nav-bg-day: #ffffff;
+    --nav-bg-night: #2a2925;
 }
 
 body {
@@ -28,6 +29,13 @@ body.night {
 
 h1, h2, h3 {
     color: var(--title-day);
+}
+
+h2 {
+    margin-left: 10px;
+}
+p {
+    margin-left: 20px;
 }
 
 body.night h1, body.night h2, body.night h3 {
@@ -76,7 +84,6 @@ body.night .ButtonHeader:hover {
 }
 
 .DivContent {
-    margin-top: 60px;
     padding: 40px 20px;
 }
 
@@ -121,9 +128,14 @@ section {
     }
     #navMenu.open {
         display: flex;
+        background-color: var(--nav-bg-day);
     }
     body.night #navMenu {
         background-color: var(--bg-night);
+    }
+
+    body.night #navMenu.open {
+        background-color: var(--nav-bg-night);
     }
 }
 
@@ -155,10 +167,12 @@ section {
     }
     #navMenu.open {
         display: flex;
+        background-color: var(--nav-bg-day);
     }
     body.night #navMenu {
         background-color: var(--bg-night);
     }
+
 }
 
 /* Tablette portrait */

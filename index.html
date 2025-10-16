@@ -15,10 +15,10 @@
                 :class="{ night: isNight }">
             {{ isNight ? "night" : "light" }}
         </button>
-        <a href="#AboutME"><button class="ButtonHeader">About me</button></a>
-        <a href="#Experience"><button class="ButtonHeader">Experience</button></a>
-        <a href="#Projects"><button class="ButtonHeader">Projects</button></a>
-        <a href="#Contact"><button class="ButtonHeader">Contact</button></a>
+        <button class="ButtonHeader" @click="scrollToSection('AboutME')">About me</button>
+        <button class="ButtonHeader" @click="scrollToSection('Experience')">Experience</button>
+        <button class="ButtonHeader" @click="scrollToSection('Projects')">Projects</button>
+        <button class="ButtonHeader" @click="scrollToSection('Contact')">Contact</button>
     </header>
 
 

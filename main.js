@@ -1,4 +1,4 @@
-const { createApp } = Vue;
+const {createApp} = Vue;
 
 createApp({
     data() {
@@ -10,6 +10,12 @@ createApp({
         toggleNight() {
             this.isNight = !this.isNight;
             document.body.classList.toggle('night', this.isNight);
+        },
+        scrollToSection: function (id) {
+            const section = document.getElementById(id);
+            if (section) {
+                section.scrollIntoView({behavior: "smooth"});
+            }
         }
     }
 }).mount('#app');

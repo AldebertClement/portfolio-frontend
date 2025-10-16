@@ -1,0 +1,82 @@
+:root {
+    --bg-day: #F5F0E6;
+    --text-day: #3B2F2F;
+    --title-day: #6B4E2E;
+    --accent-day: #A97447;
+    --hover-day: #C28E5A;
+    --highlight-day: #D8C6B4;
+    --link-hover-day: #C28E5A;
+    --highlight-night: #3A322A;
+    --link-hover-night: #D4AF7A;
+
+    --bg-night: #1B1A17;
+    --text-night: #E8DCC2;
+    --title-night: #C7A36B;
+    --accent-night: #A87C4F;
+    --hover-night: #D4AF7A;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-day);
+    color: var(--text-day);
+    font-family: Candara, Georgia, Times, 'Times New Roman', serif;
+    scroll-behavior: smooth;
+}
+
+body.night {
+    background-color: var(--bg-night);
+    color: var(--text-night);
+}
+
+h1, h2, h3 {
+    color: var(--title-day);
+}
+
+body.night h1, body.night h2, body.night h3 {
+    color: var(--title-night);
+}
+
+#header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.ButtonHeader {
+    background-color: transparent;
+    margin-right: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: var(--accent-day);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.ButtonHeader:hover {
+    color: var(--hover-day);
+}
+
+body.night .ButtonHeader {
+    color: var(--accent-night);
+}
+
+body.night .ButtonHeader:hover {
+    color: var(--hover-night);
+}
+
+.DivContent {
+    margin-top: 60px;
+    padding: 40px 20px;
+}
+
+section {
+    height: 100vh;
+    scroll-snap-align: start;
+}

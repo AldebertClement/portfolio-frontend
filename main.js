@@ -1,21 +1,26 @@
-const {createApp} = Vue;
+const { createApp } = Vue;
 
 createApp({
     data() {
         return {
-            isNight: false
-        }
+            isNight: false,
+            menuOpen: false
+        };
     },
     methods: {
         toggleNight() {
             this.isNight = !this.isNight;
             document.body.classList.toggle('night', this.isNight);
         },
-        scrollToSection: function (id) {
+        toggleMenu() {
+            this.menuOpen = !this.menuOpen;
+        },
+        scrollToSection(id) {
             const section = document.getElementById(id);
             if (section) {
-                section.scrollIntoView({behavior: "smooth"});
+                section.scrollIntoView({ behavior: "smooth" });
+                this.menuOpen = false;
             }
         }
     }
-}).mount('#app');
+}).mount("#app");

@@ -81,8 +81,17 @@ body.night .ButtonHeader:hover {
 }
 
 section {
-    height: 100vh;
+    min-height: 100vh;
     scroll-snap-align: start;
+}
+
+#burger {
+    display: none;
+}
+
+#navMenu {
+    display: flex;
+    gap: 10px;
 }
 
 /* Mobile portrait */
@@ -97,6 +106,25 @@ section {
     h2 { font-size: 22px; }
     h3 { font-size: 20px; }
     .ButtonHeader { font-size: 22px; }
+    #burger {
+        display: block;
+    }
+    #navMenu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        background-color: var(--bg-day);
+        padding: 10px;
+        border-radius: 5px;
+    }
+    #navMenu.open {
+        display: flex;
+    }
+    body.night #navMenu {
+        background-color: var(--bg-night);
+    }
 }
 
 /* Mobile paysage */
@@ -112,6 +140,25 @@ section {
     h2 { font-size: 24px; }
     h3 { font-size: 21px; }
     .ButtonHeader { font-size: 24px; }
+    #burger {
+        display: block;
+    }
+    #navMenu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        background-color: var(--bg-day);
+        padding: 10px;
+        border-radius: 5px;
+    }
+    #navMenu.open {
+        display: flex;
+    }
+    body.night #navMenu {
+        background-color: var(--bg-night);
+    }
 }
 
 /* Tablette portrait */

@@ -2,23 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Aldebert Clément</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="main.js" defer></script>
 </head>
 <body>
 <div id="app">
     <header id="header">
-        <button role="switch" class="ButtonHeader"
-                @click="toggleNight"
-                :class="{ night: isNight }">
+        <button role="switch" class="ButtonHeader" @click="toggleNight" :class="{ night: isNight }">
             {{ isNight ? "night" : "light" }}
         </button>
-        <button class="ButtonHeader" @click="scrollToSection('AboutME')">About me</button>
-        <button class="ButtonHeader" @click="scrollToSection('Experience')">Experience</button>
-        <button class="ButtonHeader" @click="scrollToSection('Projects')">Projects</button>
-        <button class="ButtonHeader" @click="scrollToSection('Contact')">Contact</button>
+        <button id="burger" class="ButtonHeader" @click="toggleMenu">☰</button>
+        <nav id="navMenu" :class="{ open: menuOpen }">
+            <button class="ButtonHeader" @click="scrollToSection('AboutME')">About me</button>
+            <button class="ButtonHeader" @click="scrollToSection('Experience')">Experience</button>
+            <button class="ButtonHeader" @click="scrollToSection('Projects')">Projects</button>
+            <button class="ButtonHeader" @click="scrollToSection('Contact')">Contact</button>
+        </nav>
     </header>
 
 

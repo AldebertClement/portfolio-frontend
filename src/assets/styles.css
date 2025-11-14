@@ -27,6 +27,15 @@ body.night {
     color: var(--text-night);
 }
 
+body, h1, h2, h3, p, .ButtonHeader, #navMenu {
+    transition:
+            background-color 0.5s ease,
+            color 0.5s ease,
+            fill 0.5s ease,
+            border-color 0.5s ease;
+}
+
+
 h1, h2, h3 {
     color: var(--title-day);
 }

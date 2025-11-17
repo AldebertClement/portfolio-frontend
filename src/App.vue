@@ -1,29 +1,23 @@
 <script>
 import Background from "./components/Background.vue";
+import NavMenu from "./components/NavMenu.vue";
+import Welcome from "./components/Welcome.vue";
+
 export default {
   components: {
     Background,
+    NavMenu,
+    Welcome,
   },
   data() {
     return {
       isNight: false,
-      menuOpen: false
     };
   },
   methods: {
-    toggleNight() {
-      this.isNight = !this.isNight;
-      document.body.classList.toggle('night', this.isNight);
-    },
-    toggleMenu() {
-      this.menuOpen = !this.menuOpen;
-    },
-    scrollToSection(id) {
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-        this.menuOpen = false;
-      }
+    toogleNightFun(value) {
+      this.isNight = value;
+      console.log(this.isNight);
     }
   }
 };
@@ -32,23 +26,14 @@ export default {
 <template>
   <div id="app">
     <Background :isNight="isNight"/>
-    <header id="header">
-      <button role="switch" class="ButtonHeader" @click="toggleNight" :class="{ night: isNight }">
-        {{ isNight ? "night" : "light" }}
-      </button>
-      <button id="burger" class="ButtonHeader" @click="toggleMenu">☰</button>
-      <nav id="navMenu" :class="{ open: menuOpen }">
-        <button class="ButtonHeader" @click="scrollToSection('AboutME')">About me</button>
-        <button class="ButtonHeader" @click="scrollToSection('Experience')">Experience</button>
-        <button class="ButtonHeader" @click="scrollToSection('Projects')">Projects</button>
-        <button class="ButtonHeader" @click="scrollToSection('Contact')">Contact</button>
-      </nav>
+    <header id="header" :class="{ night: isNight }">
+      <NavMenu @toggleNight="toogleNightFun"/>
     </header>
 
-
+    <Welcome />
     <section id="AboutME" class="DivContent">
       <h1>About me</h1>
-      <div id="WhoAmI">
+      <div id="WhoAmI" class="DivText">
         <h2>Who Am I?</h2>
         <p>
           I am Aldebert Clément, a full-stack developer specialized in Python and currently pursuing a Master’s degree
@@ -69,7 +54,7 @@ export default {
         </p>
       </div>
 
-      <div id="Education">
+      <div id="Education" class="DivText">
         <h2>Education</h2>
         <ul>
           <li>Master’s degree in Software Development (SDL), University of Toulouse – Ongoing</li>
@@ -79,7 +64,7 @@ export default {
         </ul>
       </div>
 
-      <div id="Skills">
+      <div id="Skills" class="DivText">
         <h2>Skills</h2>
         <h3>Languages & Frameworks</h3>
         <p>Java, Python, C, PL/SQL, Ada, JavaScript, OCaml, Vue.js, Coq (Roq)</p>

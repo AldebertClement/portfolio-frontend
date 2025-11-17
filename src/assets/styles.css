@@ -9,8 +9,8 @@
     --title-night: #C7A36B;
     --accent-night: #A87C4F;
     --hover-night: #D4AF7A;
-    --nav-bg-day: #ffffff;
-    --nav-bg-night: #2a2925;
+    --nav-menu: #41655b;
+    --nav-menu-night: #2E4A43;
 }
 
 body {
@@ -56,11 +56,16 @@ body.night h1, body.night h2, body.night h3 {
     position: fixed;
     top: 0;
     right: 0;
-    background-color: transparent;
     padding: 10px;
     z-index: 1000;
+    width: 100%;
+    background-color: var(--nav-menu);
+    justify-content: end;
 }
 
+#header.night{
+    background-color: var(--nav-menu-night);
+}
 .ButtonHeader {
     background-color: transparent;
     margin-right: 10px;
@@ -94,6 +99,14 @@ body.night .ButtonHeader:hover {
 
 .DivContent {
     padding: 40px 20px;
+
+}
+
+.DivText{
+    background-color:rgb(169 148 133 / 60%);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
 }
 
 section {
@@ -137,14 +150,14 @@ section {
     }
     #navMenu.open {
         display: flex;
-        background-color: var(--nav-bg-day);
+        background-color: var(--nav-menu);
     }
     body.night #navMenu {
         background-color: var(--bg-night);
     }
 
     body.night #navMenu.open {
-        background-color: var(--nav-bg-night);
+        background-color: var(--nav-menu-night);
     }
 }
 
@@ -176,10 +189,10 @@ section {
     }
     #navMenu.open {
         display: flex;
-        background-color: var(--nav-bg-day);
+        background-color: var(--nav-menu);
     }
     body.night #navMenu {
-        background-color: var(--bg-night);
+        background-color: var(--nav-menu-night);
     }
 
 }
